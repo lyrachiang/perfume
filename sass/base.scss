@@ -1,0 +1,141 @@
+@import "./reset";
+@import "./variable";
+@import "./mixin";
+
+body {
+  font-family: $font-family;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+a {
+  transition: all .3s;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.custom_container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+a.logo {
+  display: block;
+  padding: 9px 0;
+  > img {
+    width: 128px;
+    height: 38px;
+  }
+}
+
+h2.title_lg {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 60px;
+  color: #FFFFFF;
+}
+
+h3.title_md {
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 48px;
+  color: #000000;
+}
+
+h4.title_sm {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  color: #000000;
+}
+
+h5.title_xs {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  color: #848484;
+}
+
+h6.title_ss {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+}
+
+p.text_lg {
+  font-size: 24px;
+  line-height: 36px;
+  color: #FFFFFF;
+}
+
+p.text_md {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 30px;
+  color: #000000;
+}
+
+p.text_sm {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+}
+
+span.text_line_through {
+  color: #8D8D8D;
+  text-decoration: line-through;
+}
+
+.modal_open {
+  overflow: hidden;
+}
+
+.modal {
+  background-color: #00000080;
+  .modal-dialog {
+    max-width: 540px;
+  }
+  .modal-body {
+    p {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 28px;
+      color: #916000;
+      text-align: center;
+    }
+  }
+  &.show .modal-dialog {
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@include rwd-mobile(xs) {
+  .modal {
+    .modal-dialog {
+      max-width: 250px;
+    }
+  }
+}
+
+@import "./components/button";
+@import "./components/header";
+@import "./components/footer";
+@import "./pages/index";
+@import "./pages/prod";
+@import "./pages/item";
+@import "./pages/login";
+@import "./pages/member";

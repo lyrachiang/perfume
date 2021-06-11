@@ -1,0 +1,138 @@
+.item_section {
+  padding: 200px 0 60px 0;
+}
+
+.item_container {
+  @include set-card(15, 50%);
+  > div:nth-child(1) {
+    flex-basis: 67%;
+  }
+  > div:nth-child(2) {
+    flex-basis: 33%;
+  }
+}
+
+.item_img {
+  .display_top, .display_bottom {
+    background-image: url(#{$imgs}item/img_item_1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 63%;
+  }
+  .display_middle {
+    @include set-card(15, 50%);
+    padding: 30px 0;
+    .display_left, .display_right {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      padding-bottom: 183%;
+    }
+    .display_left {
+      background-image: url(#{$imgs}item/img_item_2.jpg);
+    }
+    .display_right {
+      background-image: url(#{$imgs}item/img_item_3.jpg);
+    }
+  }
+}
+
+.item_info {
+  .item_img {
+    display: none;
+    background-image: url(#{$imgs}item/img_item_1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 63%;
+  }
+  .item_price {
+    margin: 32px 0 12px 0;
+  }
+  .cnt_select_box {
+    > select {
+      border: 1px solid #916000;
+      border-radius: 4px 0px 0px 4px;
+    }
+    .input-group-append {
+      width: 54%;
+      .btn_add_cart {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.item_notify_list {
+  margin-top: 80px;
+  li {
+    .title_ss {
+      margin-bottom: 8px;
+    }
+    .text_sm {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@include rwd-mobile(md) {
+  .item_info {
+    .cnt_select_box {
+      .input-group-append {
+        width: 60%;
+      }
+    }
+  }
+}
+
+@include rwd-mobile(sm) {
+  .item_section {
+    padding: 102px 0 40px 0;
+  }
+
+  .item_container {
+    flex-direction: column;
+    > div:nth-child(1) {
+      flex-basis: 100%;
+      order: 2;
+    }
+    > div:nth-child(2) {
+      flex-basis: 100%;
+      order: 1;
+    }
+  }
+
+  .item_img {
+    .display_top {
+      display: none;
+    }
+    .display_middle {
+      flex-direction: column;
+      padding: 16px 0 0 0;
+      > div {
+        flex-basis: 100%;
+      }
+      .display_left, .display_right {
+        padding-bottom: 186%;
+        margin-bottom: 16px;
+      }
+    }
+    .display_bottom {
+      padding-bottom: 133%;
+    }
+  }
+
+  .item_info {
+    padding-left: 0;
+    .item_img {
+      display: block;
+      margin-bottom: 28px;
+    }
+    .cnt_select_box {
+      .input-group-append {
+        width: 54%;
+      }
+    }
+  }
+}
