@@ -928,7 +928,8 @@ header {
       font-weight: 500;
       font-size: 16px;
       line-height: 24px;
-      color: #848484; }
+      color: #848484;
+      border-bottom: 2px solid transparent; }
       .member_menu ul li a:hover {
         color: #916000;
         border-bottom: 2px solid #916000; }
